@@ -1,14 +1,16 @@
 // Задание 1
-const delay = ms => {
-  // Твой код
-};
+// const delay = ms => {
+//  return new Promise((resolve, reject) => {
+//    resolve(ms);
+//   })
+// };
 
-const logger = time => console.log(`Resolved after ${time}ms`);
+// const logger = time => console.log(`Resolved after ${time}ms`).catch((err) => console.log(err));
 
-// Вызовы функции для проверки
-delay(2000).then(logger); // Resolved after 2000ms
-delay(1000).then(logger); // Resolved after 1000ms
-delay(1500).then(logger); // Resolved after 1500ms
+// // Вызовы функции для проверки
+// delay(2000).then(logger); // Resolved after 2000ms
+// delay(1000).then(logger); // Resolved after 1000ms
+// delay(1500).then(logger); // Resolved after 1500ms
 
 // Задание 2
 // const users = [
@@ -18,27 +20,22 @@ delay(1500).then(logger); // Resolved after 1500ms
 //   { name: 'Lux', active: false },
 // ];
 
-// const toggleUserState = (allUsers, userName, callback) => {
-//   const updatedUsers = allUsers.map(user =>
+// const toggleUserState = (allUsers, userName) => {
+
+//   return new Promise((resolve, reject) => {
+//     const updatedUsers = allUsers.map(user =>
 //     user.name === userName ? { ...user, active: !user.active } : user,
 //   );
 
-//   callback(updatedUsers);
+//   resolve(updatedUsers);
+//   })
+  
 // };
 
 // const logger = updatedUsers => console.table(updatedUsers);
 
-// /*
-//  * Сейчас работает так
-//  */
-// toggleUserState(users, 'Mango', logger);
-// toggleUserState(users, 'Lux', logger);
-
-// /*
-//  * Должно работать так
-//  */
-// toggleUserState(users, 'Mango').then(logger);
-// toggleUserState(users, 'Lux').then(logger);
+// toggleUserState(users, 'Mango').then(logger).catch((err) => console.log(err));
+// toggleUserState(users, 'Lux').then(logger).catch((err) => console.log(err));
 
 
 // Задание 3
@@ -93,3 +90,32 @@ delay(1500).then(logger); // Resolved after 1500ms
 // makeTransaction({ id: 73, amount: 100 })
 //   .then(logSuccess)
 //   .catch(logError);
+
+
+
+// ==============================   ========================
+// const getUserData = new Promise((resolve) => {
+//   resolve({ name: Vlad, age: 24 });
+// });
+
+// const test = Promise.resolve('Hello!');
+
+// getUserData.then((data) => console.log(data)).catch(() => console.log('error'));
+
+// test.then(data => console.log(data));
+
+
+// const createArray = new Promise((done, error) => {
+// const arr = [];
+
+// for (let i = 0; i < 10000000; i += 1){
+//   arr.push(i)
+//   }
+  
+//   error(arr);
+// })
+
+
+
+// createArray.then((data) => console.log(data)).catch((err) => console.log(err))
+// console.log(createArray.then())
